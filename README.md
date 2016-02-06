@@ -1,2 +1,3 @@
 # foxes-and-dolphins
-Foxes and Dolphins using Sails.js
+
+a [Sails](http://sailsjs.org) application
