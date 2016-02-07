@@ -8,7 +8,17 @@
 module.exports = {
     attributes: {
         game: {
-            model: 'game'
+            model: 'game',
+            required: true
+        },
+        type: {
+            type: 'string',
+            enum: ['water', 'land'],
+            required: true
+        },
+        animals: {
+            collection: 'animal',
+            via: 'cell'
         }
     }
 };

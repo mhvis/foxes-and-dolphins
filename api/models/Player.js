@@ -6,9 +6,15 @@
  */
 
 module.exports = {
-
-  attributes: {
-
-  }
+    attributes: {
+        game: {
+            model: 'game',
+            required: true
+        },
+        controls: {
+            type: 'string',
+            enum: ['foxes', 'dolphins'],
+            required: true
+        }
+    }
 };
-
