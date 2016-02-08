@@ -1,3 +1,3 @@
-# foxes-and-dolphins
+# Foxes and Dolphins
 
-a [Sails](http://sailsjs.org) application
+With Feathers.
