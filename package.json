@@ -1,0 +1,25 @@
+{
+  "name": "foxes-and-dolphins",
+  "version": "1.0.0",
+  "description": "Foxes and Dolphins, a game used for a TU/e course.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhvis/foxes-and-dolphins.git"
+  },
+  "author": "M.H. Visscher <mail@maartenvisscher.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhvis/foxes-and-dolphins/issues"
+  },
+  "homepage": "https://github.com/mhvis/foxes-and-dolphins#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "feathers": "^1.3.0",
+    "feathers-memory": "^0.6.0"
+  }
+}
