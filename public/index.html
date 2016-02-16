@@ -11,14 +11,16 @@
         <div class="page-header">
             <h1>Foxes and Dolphins</h1>
         </div>
-
         <div class="row">
             <div class="col-md-10">
+                <div ng-controller="GameController">
+                </div>
             </div>
-        </div>
-
-        <div ng-controller="GameController">
-
+            <div class="col-md-2">
+                <ul ng-controller="GameListController">
+                    <li ng-repeat="game in games">{{game.id}}</li>
+                </ul>
+            </div>
         </div>
     </div>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

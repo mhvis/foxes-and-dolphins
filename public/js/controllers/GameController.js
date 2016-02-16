@@ -1,9 +1,13 @@
-app.controller('GameController', ['$scope', function($scope) {
+app.controller('GameController', ['$scope', 'store', function($scope, store) {
 	$scope.board = [];
 	$scope.animals = [];
 	$scope.players = [];
 
-	$scope.turn = function() {
+	$scope.pickAnimal = function() {
+
+	};
+
+	$scope.dropAnimal = function() {
 
 	};
 }]);
