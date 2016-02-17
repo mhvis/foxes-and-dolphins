@@ -98,6 +98,9 @@ io.on('connection', function(socket) {
     });
 });
 
-server.listen(3000, function() {
-    console.log('Listening on port 3000');
+var port = OPENSHIFT_NODEJS_PORT || 3000;
+var host = OPENSHIFT_NODEJS_IP || false;
+
+server.listen(port, host, function() {
+    console.log('Listening on ' + host + ':' + port);
 });
