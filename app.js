@@ -69,6 +69,10 @@ io.on('connection', function(socket) {
                 animalIndex = index;
             }
         });
+        // Skip when animal was not found
+        if (animalIndex == -1) {
+            return;
+        }
         animals[animalIndex].x = action.to.x;
         animals[animalIndex].y = action.to.y;
         // If attacking, remove other animal

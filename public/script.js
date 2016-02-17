@@ -65,20 +65,36 @@ function setTurn(game, $cells) {
         }, function() {
             $(this).removeClass('board-cell-hover');
         });
+        // Onclick on whoever has turn
         $cells[loc.y][loc.x].click(function() {
+            // Check if dolphin is on land, then disable this dolphin
+            if ((game.board[loc.y][loc.x] == 'l') && !isFox) {
+                return;
+            }
             $(this).addClass('board-cell-selected');
+            // Find 4 neighbors
             var dirs = [{ x: -1, y: 0 }, { x: 1, y: 0 }, { x: 0, y: -1 }, { x: 0, y: 1 }];
             dirs.forEach(function(dir) {
-                if (loc.x + dir.x < 0 || loc.x + dir.x >= $cells.length ||
-                    loc.y + dir.y < 0 || loc.y + dir.y >= $cells[0].length) {
+                var x = loc.x + dir.x;
+                var y = loc.y + dir.y;
+                // Stop if neigbhor is outside grid
+                if (x < 0 || x >= $cells.length || y < 0 || y >= $cells[0].length) {
                     return;
                 }
-                var $cell = $cells[loc.y + dir.y][loc.x + dir.x];
+                var $cell = $cells[y][x];
+                // Stop if neighbor has adjacent type of itself
                 if (isFox && $cell.hasClass('board-cell-fox') ||
                     !isFox && $cell.hasClass('board-cell-dolphin')) {
                     return;
                 }
+                // Make not selectable when selected item is fox and cell is water, vice versa
+                if (isFox && game.board[y][x] == 'w' || !isFox && game.board[y][x] == 'l') {
+                    return;
+                }
                 $cell.addClass('board-cell-selectable');
+                // Remove possible former event handler for safety
+                $cell.off('click');
+                // Set click handler to send action to server
                 $cell.click(function() {
                     socket.emit('action', { from: loc, to: { x: loc.x + dir.x, y: loc.y + dir.y } });
                 });
