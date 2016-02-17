@@ -117,6 +117,10 @@ socket.on('game', function(game) {
     updateGui(game);
 });
 
+socket.on('connectedCount', function(count) {
+	$('#spanConnected').text(count);
+});
+
 $('#btnNewGame').click(function() {
     socket.emit('newGame', $('#inputNewGameSize').val());
 });

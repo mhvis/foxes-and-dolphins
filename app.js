@@ -11,7 +11,7 @@ function gameType1(size) {
     game.board = [];
     game.foxes = [];
     game.dolphins = [];
-    game.turn = (Math.floor(Math.random() * 2) === 0) ? 'fox' : 'dolphin';
+    game.turn = (Math.floor(Math.random() * 2) === 0) ? 'foxes' : 'dolphins';
     tideState = size / 2;
     var foxes = [];
     var dolphins = [];
@@ -55,6 +55,7 @@ function tide() {
 
 io.on('connection', function(socket) {
     socket.emit('game', game);
+    io.emit('connectedCount', io.engine.clientsCount);
 
     socket.on('newGame', function(size) {
         gameType1(size);
@@ -99,6 +100,10 @@ io.on('connection', function(socket) {
         tide();
         // Send new board
         io.emit('game', game);
+    });
+
+    socket.on('disconnect', function() {
+        io.emit('connectedCount', io.engine.clientsCount);
     });
 });
 

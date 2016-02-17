@@ -38,12 +38,15 @@
     .board-cell-dolphin {
         background-image: url("/dolphin.png");
     }
+    
     .board-cell-hover {
         background-color: #cccccc;
     }
+    
     .board-cell-selected {
         background-color: #888888;
     }
+    
     .board-cell-selectable {
         background-color: #cccccc;
     }
@@ -53,11 +56,19 @@
 <body>
     <div id="board" class="board"></div>
     <div style="clear: both;">
-        Board size:
-        <input type="number" style="width: 40px" id="inputNewGameSize" value="8">
-        <button id="btnNewGame">New game</button>
-        Turn:
-        <span style="font-style: italic;" id="spanTurn"></span>
+        <p>
+            Board size:
+            <input type="number" style="width: 40px" id="inputNewGameSize" value="8">
+            <button id="btnNewGame">New game</button>
+            Turn:
+            <span style="font-style: italic;" id="spanTurn"></span>
+        </p>
+        <p>
+            Number of connected people: <span style="font-style: italic;" id="spanConnected"></span>
+        </p>
+        <p>
+            Code is at <a href="https://github.com/mhvis/foxes-and-dolphins">https://github.com/mhvis/foxes-and-dolphins</a>
+        </p>
     </div>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
