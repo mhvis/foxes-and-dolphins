@@ -3,11 +3,65 @@
 
 <head>
     <title>Foxes and Dolphins</title>
+    <style>
+    /*.board {
+            width: 160px;
+            height: 160px;
+        }*/
+    
+    .board-row {
+        /*width: 160px;
+            height: 20px;*/
+        clear: left;
+    }
+    
+    .board-cell {
+        width: 40px;
+        height: 40px;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+    }
+    
+    .board-cell-water {
+        background-color: #2e4272;
+    }
+    
+    .board-cell-land {
+        background-color: #aa6c39;
+    }
+    
+    .board-cell-fox {
+        background-image: url("/fox.png");
+    }
+    
+    .board-cell-dolphin {
+        background-image: url("/dolphin.png");
+    }
+    .board-cell-hover {
+        background-color: #cccccc;
+    }
+    .board-cell-selected {
+        background-color: #888888;
+    }
+    .board-cell-selectable {
+        background-color: #cccccc;
+    }
+    </style>
 </head>
 
 <body>
+    <div id="board" class="board"></div>
+    <div style="clear: both;">
+        Board size:
+        <input type="number" style="width: 40px" id="inputNewGameSize" value="8">
+        <button id="btnNewGame">New game</button>
+        Turn:
+        <span style="font-style: italic;" id="spanTurn"></span>
+    </div>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-n</body>
+    <script src="/script.js"></script>
+</body>
 
 </html>
