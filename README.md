@@ -1,3 +1,3 @@
 # Foxes and Dolphins
 
-WARNING: Horrible code, can hurt eyes.
+**WARNING**: Horrible code, can hurt eyes.
