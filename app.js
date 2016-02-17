@@ -98,8 +98,8 @@ io.on('connection', function(socket) {
     });
 });
 
-var port = OPENSHIFT_NODEJS_PORT || 3000;
-var host = OPENSHIFT_NODEJS_IP || false;
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var host = process.env.OPENSHIFT_NODEJS_IP || false;
 
 server.listen(port, host, function() {
     console.log('Listening on ' + host + ':' + port);
